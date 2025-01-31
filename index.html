@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Povestea lui Pavel și Maria</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function showSection(section) {
+            document.getElementById('pavel').classList.add('hidden');
+            document.getElementById('maria').classList.add('hidden');
+            document.getElementById(section).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen">
+    <h1 class="text-4xl font-bold mb-6 animate-bounce">Povestea lui Pavel și Maria</h1>
+    
+    <div class="flex space-x-4 mb-6">
+        <button onclick="showSection('pavel')" class="px-6 py-2 bg-blue-500 hover:bg-blue-700 transition-transform transform hover:scale-110 rounded-lg shadow-lg">Pavel</button>
+        <button onclick="showSection('maria')" class="px-6 py-2 bg-pink-500 hover:bg-pink-700 transition-transform transform hover:scale-110 rounded-lg shadow-lg">Maria</button>
+    </div>
+    
+    <div id="pavel" class="p-6 bg-gray-800 rounded-lg shadow-lg w-4/5 md:w-1/2 hidden animate-fade-in">
+        <h2 class="text-2xl font-semibold mb-4">Viața lui Pavel</h2>
+        <p>Pavel a fost un copil curios și dornic de aventură, crescând într-un sat pitoresc...</p>
+    </div>
+    
+    <div id="maria" class="p-6 bg-gray-800 rounded-lg shadow-lg w-4/5 md:w-1/2 hidden animate-fade-in">
+        <h2 class="text-2xl font-semibold mb-4">Viața Mariei</h2>
+        <p>Maria a fost o fată blândă și visătoare, iubind să picteze peisaje și să citească...</p>
+    </div>
+    
+    <style>
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.5s ease-out;
+        }
+    </style>
+</body>
+</html>
