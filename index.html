@@ -3,34 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Povestea lui Pavel și Maria</title>
+    <title>Huu Maria!</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         function showSection(section) {
+            // Ascunde toate secțiunile
             document.getElementById('pavel').classList.add('hidden');
             document.getElementById('maria').classList.add('hidden');
+            document.getElementById('informations').classList.add('hidden');
+
+            // Afișează secțiunea selectată
             document.getElementById(section).classList.remove('hidden');
         }
+
+        function showInfo() {
+            // Ascunde toate secțiunile
+            document.getElementById('pavel').classList.add('hidden');
+            document.getElementById('maria').classList.add('hidden');
+
+            // Afișează doar secțiunea de informații
+            document.getElementById('informations').classList.remove('hidden');
+        }
     </script>
-</head>
-<body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen">
-    <h1 class="text-4xl font-bold mb-6 animate-bounce">Povestea lui Pavel și Maria</h1>
-    
-    <div class="flex space-x-4 mb-6">
-        <button onclick="showSection('pavel')" class="px-6 py-2 bg-blue-500 hover:bg-blue-700 transition-transform transform hover:scale-110 rounded-lg shadow-lg">Pavel</button>
-        <button onclick="showSection('maria')" class="px-6 py-2 bg-pink-500 hover:bg-pink-700 transition-transform transform hover:scale-110 rounded-lg shadow-lg">Maria</button>
-    </div>
-    
-    <div id="pavel" class="p-6 bg-gray-800 rounded-lg shadow-lg w-4/5 md:w-1/2 hidden animate-fade-in">
-        <h2 class="text-2xl font-semibold mb-4">Viața lui Pavel</h2>
-        <p>Pavel a fost un copil curios și dornic de aventură, crescând într-un sat pitoresc...</p>
-    </div>
-    
-    <div id="maria" class="p-6 bg-gray-800 rounded-lg shadow-lg w-4/5 md:w-1/2 hidden animate-fade-in">
-        <h2 class="text-2xl font-semibold mb-4">Viața Mariei</h2>
-        <p>Maria a fost o fată blândă și visătoare, iubind să picteze peisaje și să citească...</p>
-    </div>
-    
     <style>
         @keyframes fade-in {
             from { opacity: 0; transform: translateY(10px); }
@@ -39,6 +33,80 @@
         .animate-fade-in {
             animation: fade-in 0.5s ease-out;
         }
+        .full-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #2d2d2d;
+            padding: 20px;
+            color: white;
+            overflow-y: auto;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
     </style>
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen relative">
+    <h1 class="text-4xl font-bold mb-6 animate-bounce">Apasa mai jos pe cine vrei sa cunosti mai bine</h1>
+    
+    <div class="flex space-x-4 mb-6">
+        <button onclick="showSection('pavel')" class="px-6 py-2 bg-blue-500 hover:bg-blue-700 transition-transform transform hover:scale-110 rounded-lg shadow-lg">Pavel</button>
+        <button onclick="showSection('maria')" class="px-6 py-2 bg-pink-500 hover:bg-pink-700 transition-transform transform hover:scale-110 rounded-lg shadow-lg">Maria</button>
+        <button onclick="showInfo()" class="px-6 py-2 bg-green-500 hover:bg-green-700 transition-transform transform hover:scale-110 rounded-lg shadow-lg mt-6">Informații</button>
+    </div>
+    
+    <div id="pavel" class="p-6 bg-gray-800 rounded-lg shadow-lg w-4/5 md:w-1/2 hidden animate-fade-in">
+        <h2 class="text-2xl font-semibold mb-4">Pavel, un baiat cumsecade</h2>
+        <p>Intr-o zi parvenita un baiat "Pavel" se transfera la o scoala amoroasa. Aici o cunoaste pe amoroasa "Maria", aceeasta fugind dupa barbati cu ciocanu dezvoltat in fiecare ora, BA chiar o curva cum s-ar zice. Primele minute lui "Pavelica" cu "Maria" au decurs conform ciocanului. Dupa cateva saptamani de certuri amoroase si dupa despartiri si despartiri, S-AU CASATORIT! Dar ce nu stia "Pavelica" e ca asta e o curva care se tine de mana cu femeile. Nimic neobisnuit pana cand "Tarfa" ajunge sa vorbeasca si despre alti baieti, IAR DESPARTIRI PESTE DESPARTIRI, "Pavelica" un baietel la locul lui a zis o data "SA-MI BAG TOATA PULA IN FAMILIA EI DE CURVA" dupa asta Tarfa a plans rau, dar s-au impacat, Asa Pavelica 2metri a cucerito pe curwa de Maria 1metru, eu, ca scriitor acestei povesti amoroase, platit bine inteles, mereu ii vad futunduse in baia de la baieti, IDK! oricum creca Maria s-o urcat pe veceu ca sa ii ajunga in gaura</p>
+    </div>
+    
+    <div id="maria" class="p-6 bg-gray-800 rounded-lg shadow-lg w-4/5 md:w-1/2 hidden animate-fade-in">
+        <h2 class="text-2xl font-semibold mb-4">Maria 1metru tarfa scolii</h2>
+        <p>Maria 1metru tarfa care fuge incontinuu dupa barbati cu ciocanu dezvoltat mai rau ca Ema Krater cu Yamaha, isi da cu 2metri si 1 tona de farduri sa se faca emoloaica, acum urmeaza un mesaj scurt pentru ea ! "Maria, sa-mi sugi toata pula si cu tot neamu ma-tii vino la mine sa mi-o sugi daca tot vrei ciocanu lu thor ii dau si lu vaca de ma-ta si lu cheleosu de tactu, mai duten pula mea de tarfa, mi-am sacrificat 1 milion sa public tot cacatu asta pe internet ca sa vada toata scoala ca esti cea mai mare tarfa fututi morti n cur, daca e sa mori sper sa mori alba a dreacu scroafa</p>
+    </div>
+
+    <div id="informations" class="full-screen hidden">
+        <h2 class="text-3xl font-bold mb-6">Forum - Informatii suplimentare</h2>
+        
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-4">
+            <h3 class="text-2xl font-semibold">Mesaj pentru Maria</h3>
+            <p><strong>Publicat de:</strong> Anonymous</p>
+            <p><strong>Data:</strong> 1969-12-31</p>
+            <p class="mt-4">Descriere: Maria, o tarfa internationala recunoscuta in 50 de tari, avand 1 metru si curu mare ne permitem sa ii trimitem un mesaj amoros "Ba, sa-mi bag pula in neamu tau de cand s-a creat pana acum, sa ti i iau pe toti sa ti umplu curu cu ei si sa-i fac lu tactu o frizura mai buna, lu vaca de ma-ta ceva mai multa pula, hai atat sa nu ti pomenesc si bunica ca dupa nu-i frumos sa mi bag pula in ea..."</p>
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-semibold">Despre forum</h3>
+            <p><strong>Publicat de:</strong> Anonymous</p>
+            <p><strong>Data:</strong> 1969-12-31</p>
+            <p class="mt-4">Descriere: Acesta este un forum dedicat scolii, unde se vorbeste despre noutatile amoroase si a se dezvalui toate secretele smar2lor nesuferiti. Primul subiect s-a decis sa fie Maria si Pavel deoarece este foarte amoros ce se intampla in aceasta relatie si na... Ne place sa vedem cum sta Maria 1metru langa Pavel 2metri.</p>
+        </div>
+    </div>
+
+    <footer class="footer text-gray-400 text-sm">
+        <p>Propagat de Anonymous 2025 &copy;</p>
+    </footer>
+    <script>
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'F12' || event.keyCode === 123) {
+            event.preventDefault();
+        }
+        if (event.ctrlKey && event.shiftKey && event.key === 'I') {
+            event.preventDefault();
+        }
+    });
+
+    // Previne click dreapta
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+    });
+</script>
 </body>
 </html>
